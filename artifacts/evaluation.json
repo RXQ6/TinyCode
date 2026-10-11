@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-10-10T02:55:17.816Z",
+  "mode": "offline-real-tools",
+  "summary": [
+    {
+      "scenario": "quantity-discount",
+      "passed": true,
+      "toolCalls": 6,
+      "exitCodes": [
+        1,
+        0
+      ],
+      "runId": "a06bb8f9-b38c-4b87-bf57-8d46d3216d16"
+    },
+    {
+      "scenario": "decimal-prices",
+      "passed": true,
+      "toolCalls": 6,
+      "exitCodes": [
+        1,
+        0
+      ],
+      "runId": "c19d13f1-01a4-499c-87a0-730d4a5a5a12"
+    },
+    {
+      "scenario": "large-quantity",
+      "passed": true,
+      "toolCalls": 6,
+      "exitCodes": [
+        1,
+        0
+      ],
+      "runId": "0394b60c-24b4-47f6-a6e5-d83c21a05846"
+    },
+    {
+      "scenario": "quarter-discount",
+      "passed": true,
+      "toolCalls": 6,
+      "exitCodes": [
+        1,
+        0
+      ],
+      "runId": "d56c0d34-0051-4f43-b66e-ecc34b3e9255"
+    },
+    {
+      "scenario": "small-amount",
+      "passed": true,
+      "toolCalls": 6,
+      "exitCodes": [
+        1,
+        0
+      ],
+      "runId": "e9bf96e5-6413-4c83-bb53-839d2679a5a6"
+    }
+  ]
+}

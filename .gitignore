@@ -1,0 +1,7 @@
+node_modules/
+out/
+.workbench/
+test-results/
+playwright-report/
+.env
+*.tsbuildinfo

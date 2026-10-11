@@ -1,0 +1,42 @@
+{
+  "verifiedAt": "2026-10-10T03:05:38.255Z",
+  "timezone": "Asia/Shanghai",
+  "onlineProviderRun": false,
+  "versions": {
+    "node": "v24.15.0",
+    "@earendil-works/pi-coding-agent": "0.84.2",
+    "electron": "41.10.7",
+    "react": "19.3.0",
+    "typescript": "5.9.3",
+    "@playwright/test": "1.64.0"
+  },
+  "success": true,
+  "results": [
+    {
+      "command": "npm run typecheck",
+      "exitCode": 0,
+      "durationMs": 5859,
+      "log": "D:\\tinycode-prac\\artifacts\\verification-logs\\typecheck.log"
+    },
+    {
+      "command": "npm run test",
+      "exitCode": 0,
+      "durationMs": 9574,
+      "log": "D:\\tinycode-prac\\artifacts\\verification-logs\\test.log",
+      "passedTests": 54
+    },
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "durationMs": 2642,
+      "log": "D:\\tinycode-prac\\artifacts\\verification-logs\\build.log"
+    },
+    {
+      "command": "npm run test:e2e",
+      "exitCode": 0,
+      "durationMs": 11245,
+      "log": "D:\\tinycode-prac\\artifacts\\verification-logs\\test-e2e.log",
+      "passedTests": 3
+    }
+  ]
+}
