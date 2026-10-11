@@ -16,6 +16,12 @@ test('desktop runs repair loop and replays history after restart', async ({}, te
   let app = await launch(directory);
   try {
     const page = await app.firstWindow(); const workbench = new WorkbenchPage(page);
+    await expect(page.getByRole('heading', { name: '任务配置' })).toBeVisible();
+    expect(await app.evaluate(({ Menu }) => Menu.getApplicationMenu() === null)).toBe(true);
+    await page.screenshot({ path: 'artifacts/ui-redesign-empty.png', fullPage: true });
+    await app.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0]?.setSize(950, 800));
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+    await app.evaluate(({ BrowserWindow }) => BrowserWindow.getAllWindows()[0]?.setSize(1360, 900));
     await workbench.demo();
     const root = await page.getByLabel('工作目录').inputValue();
     await workbench.start(); await workbench.expectComplete();
@@ -31,6 +37,7 @@ test('desktop runs repair loop and replays history after restart', async ({}, te
     expect(security).toEqual({ contextIsolation: true, sandbox: true, nodeIntegration: false });
     expect(await page.evaluate(() => typeof (window as unknown as Record<string, unknown>)['require'])).toBe('undefined');
     await page.screenshot({ path: testInfo.outputPath('completed.png'), fullPage: true });
+    await page.screenshot({ path: 'artifacts/ui-redesign-completed.png', fullPage: true });
     await app.close(); app = await launch(directory);
     const reopened = await app.firstWindow();
     await reopened.getByRole('button', { name: /修复购物车数量与折扣计算.*已结束/ }).click();

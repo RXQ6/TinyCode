@@ -1,4 +1,4 @@
-import { app, BrowserWindow, dialog, ipcMain, session } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, Menu, session } from 'electron';
 import type { IpcMainInvokeEvent } from 'electron';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -23,6 +23,7 @@ function handle<T>(channel: string, action: (...args: unknown[]) => Promise<T>):
   });
 }
 async function createWindow(): Promise<void> {
+  Menu.setApplicationMenu(null);
   window = new BrowserWindow({ width: 1360, height: 900, minWidth: 900, minHeight: 650, title: 'TinyCode Workbench', backgroundColor: '#edf2f7', show: false,
     webPreferences: { preload: path.join(here, '../preload/index.cjs'), contextIsolation: true, sandbox: true, nodeIntegration: false } });
   window.webContents.setWindowOpenHandler(() => ({ action: 'deny' }));
